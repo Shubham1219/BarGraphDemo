@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.techskaud.bargraphdemo.fragments.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/splash_frgament"
+        >
+        <action
+            android:id="@+id/action_splashFragment_to_barChartFragment"
+            app:destination="@id/barChartFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/barChartFragment"
+        android:name="com.techskaud.bargraphdemo.bar_graph.BarChartFragment"
+        android:label="BarChartFragment" />
+
+</navigation>
