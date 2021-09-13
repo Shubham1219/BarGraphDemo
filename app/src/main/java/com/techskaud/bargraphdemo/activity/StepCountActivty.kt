@@ -58,7 +58,7 @@ enum class FitActionRequestCode {
  * to record steps, and display the daily current step count. It also demonstrates how to
  * authenticate a user with Google Play Services.
  */
-class MainActivity : AppCompatActivity() {
+class StepCountActivty : AppCompatActivity() {
 
 
     private val fitnessOptions = FitnessOptions.builder()

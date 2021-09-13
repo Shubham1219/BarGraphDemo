@@ -1,6 +1,9 @@
 package com.techskaud.bargraphdemo.bar_graph
 
+import android.content.Intent
 import android.graphics.RectF
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import com.example.woohoo.base.BaseFragment
 import com.github.mikephil.charting.components.Legend
@@ -21,6 +24,7 @@ import com.github.mikephil.charting.listener.OnChartValueSelectedListener
 import com.github.mikephil.charting.utils.ColorTemplate
 import com.github.mikephil.charting.utils.MPPointF
 import com.techskaud.bargraphdemo.R
+import com.techskaud.bargraphdemo.activity.StepCountActivty
 import kotlinx.android.synthetic.main.bar_chat_layout.*
 import java.util.ArrayList
 
@@ -32,6 +36,11 @@ class BarChartFragment : BaseFragment(), OnChartValueSelectedListener {
     override fun onCreateView() {
         setData()
         setBarGraph()
+        Handler(Looper.getMainLooper()).postDelayed({
+                                                    val intent = Intent(requireActivity(),StepCountActivty::class.java)
+            startActivity(intent)
+
+        },2500)
     }
     fun setBarGraph(){
         chart.setOnChartValueSelectedListener(this)
